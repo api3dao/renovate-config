@@ -1,0 +1,11 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "description": "Permit major updates for known ESM or specific problematic packages",
+      "matchPackageNames": ["chalk", "tinyqueue", "is-wsl", "prettier-plugin-solidity", "hardhat", "ethers"],
+      "matchUpdateTypes": ["major"],
+      "enabled": true
+    }
+  ]
+}
