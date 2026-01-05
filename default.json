@@ -7,33 +7,33 @@
   "rangeStrategy": "bump",
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["before 5am on the first day of the month"]
+    "schedule": ["first day of the month"]
   },
   "packageRules": [
     {
       "description": "Monthly: Schedule major updates with 4-week stabilization",
       "matchUpdateTypes": ["major"],
       "minimumReleaseAge": "28 days",
-      "schedule": ["before 5am on the first day of the month"]
+      "schedule": ["first day of the month"]
     },
     {
       "description": "Monthly: Group all standard dev dependency updates",
       "matchDepTypes": ["devDependencies"],
       "matchUpdateTypes": ["minor", "patch"],
-      "schedule": ["before 5am on the first day of the month"],
+      "schedule": ["first day of the month"],
       "groupName": "dev-dependencies"
     },
     {
       "description": "Monthly: Group all standard dependency updates",
       "matchDepTypes": ["dependencies"],
       "matchUpdateTypes": ["minor", "patch"],
-      "schedule": ["before 5am on the first day of the month"],
+      "schedule": ["first day of the month"],
       "groupName": "dependencies"
     },
     {
       "description": "Infrastructure: Update Node/PNPM only every 6 months",
       "matchPackageNames": ["node", "@types/node", "actions/node-versions", "pnpm"],
-      "schedule": ["before 5am on the first day of january", "before 5am on the first day of july"],
+      "schedule": ["first day of january", "first day of july"],
       "groupName": "infrastructure-maintenance",
       "respectLatest": false
     },
