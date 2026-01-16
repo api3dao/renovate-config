@@ -1,0 +1,5 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["local>api3dao/renovate-config:base"],
+  "description": "Shared preset for ESM projects"
+}

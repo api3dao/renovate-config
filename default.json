@@ -1,42 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", ":dependencyDashboard"],
-  "ignoreScripts": true,
-  "internalChecksFilter": "strict",
-  "minimumReleaseAge": "14 days",
-  "rangeStrategy": "bump",
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": ["* * 1 * *"]
-  },
+  "extends": ["local>api3dao/renovate-config:base"],
+  "description": "Shared preset for CommonJS projects",
   "packageRules": [
-    {
-      "description": "Monthly: Schedule major updates with 4-week stabilization",
-      "matchUpdateTypes": ["major"],
-      "minimumReleaseAge": "28 days",
-      "schedule": ["* * 1 * *"]
-    },
-    {
-      "description": "Monthly: Group all standard dev dependency updates",
-      "matchDepTypes": ["devDependencies"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "schedule": ["* * 1 * *"],
-      "groupName": "dev-dependencies"
-    },
-    {
-      "description": "Monthly: Group all standard dependency updates",
-      "matchDepTypes": ["dependencies"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "schedule": ["* * 1 * *"],
-      "groupName": "dependencies"
-    },
-    {
-      "description": "Infrastructure: Update Node/PNPM only every 6 months",
-      "matchPackageNames": ["node", "@types/node", "actions/node-versions", "pnpm"],
-      "schedule": ["* * 1 1 *", "* * 1 7 *"],
-      "groupName": "infrastructure-maintenance",
-      "respectLatest": false
-    },
     {
       "description": "Block major updates for known ESM or specific problematic packages",
       "matchPackageNames": ["chalk", "tinyqueue", "is-wsl", "prettier-plugin-solidity", "hardhat", "ethers"],
