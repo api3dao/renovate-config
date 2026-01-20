@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", ":dependencyDashboard"],
+  "extends": ["config:recommended", "group:jsTest", "group:eslintMonorepo", "group:vite", ":dependencyDashboard"],
   "ignoreScripts": true,
   "internalChecksFilter": "strict",
   "minimumReleaseAge": "14 days",
@@ -10,6 +10,12 @@
     "schedule": ["* * 1 * *"]
   },
   "packageRules": [
+    {
+      "description": "Group GitHub actions updates",
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["actions/*"],
+      "groupName": "GitHub actions"
+    },
     {
       "description": "Monthly: Schedule major updates with 4-week stabilization",
       "matchUpdateTypes": ["major"],
