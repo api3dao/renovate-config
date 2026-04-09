@@ -42,6 +42,11 @@
       "schedule": ["* * 1 1,7 *"],
       "groupName": "infrastructure-maintenance",
       "respectLatest": false
+    },
+    {
+      "description": "Lock file maintenance is performed by the package manager, not Renovate, so minimumReleaseAge cannot be enforced here",
+      "matchUpdateTypes": ["lockFileMaintenance"],
+      "minimumReleaseAge": null
     }
   ]
 }
