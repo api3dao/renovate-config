@@ -45,7 +45,7 @@
     },
     {
       "description": "Lock file maintenance is performed by the package manager, not Renovate, so minimumReleaseAge cannot be enforced here",
-      "matchUpdateTypes": ["lockFileMaintenance", "pin"],
+      "matchUpdateTypes": ["lockFileMaintenance"],
       "minimumReleaseAge": null
     }
   ]
